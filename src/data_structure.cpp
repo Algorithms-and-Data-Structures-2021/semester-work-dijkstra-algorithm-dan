@@ -48,4 +48,13 @@ namespace itis {
     heapify(0);
     return min_vertex;
   }
+  void MinBinaryHeap::change_value(int index, int new_value) {
+    vertexes_[index].value = new_value;
+    while (vertexes_[index].value < vertexes_[get_parent(index)].value
+           && index != 0){
+      swap(index, get_parent(index));
+      index = get_parent(index);
+    }
+  }
+
 }  // namespace itis
