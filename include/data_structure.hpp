@@ -2,26 +2,26 @@
 
 // Заголовочный файл с объявлением структуры данных
 
+#include <vector>
 namespace itis {
-
-  // Tip 1: объявите здесь необходимые структуры, функции, константы и прочее
-
-  // Пример: объявление константы времени компиляции в заголовочном файле
-  inline constexpr auto kStringConstant = "Hello, stranger!";
-
-  // Пример: объявление структуры с полями и методами
-  struct MyStructure {
+  struct Vertex{
+    int number;
+    int value;
+  };
+  struct MinBinaryHeap {
    public:
-    int size_{0};
-    int capacity_{0};
-    int* data_{nullptr};
+    void create_heap(std::vector<Vertex>& vertexes);
+    Vertex& get_min_vertex();
+    void change_value(int index);
 
-    // Tip 2: На начальном этапе разработки структуры данных можете определения методов задавать в
-    // заголовочном файле, как только работа будет завершена, можно будет оставить здесь только объявления.
+   private:
+    static int get_left_child(int index);
+    static int get_right_child(int index);
+    static int get_parent(int index);
+    void heapify(int index);
+    void swap(int i, int j);
 
-    int size() const {
-      return size_;
-    }
+    std::vector<Vertex> vertexes_;
   };
 
 }  // namespace itis
