@@ -12,7 +12,7 @@ namespace itis {
    public:
     void create_heap(std::vector<Vertex>& vertexes);
     Vertex& get_min_vertex();
-    void change_value(int index);
+    void change_value(int index, int new_value);
 
    private:
     static int get_left_child(int index);
