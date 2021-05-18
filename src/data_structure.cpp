@@ -41,4 +41,11 @@ namespace itis {
   void MinBinaryHeap::swap(int i, int j) {
     std::swap(vertexes_[i], vertexes_[j]);
   }
+  Vertex& MinBinaryHeap::get_min_vertex() {
+    swap(0, vertexes_.size() - 1);
+    Vertex& min_vertex = vertexes_.back();
+    vertexes_.pop_back();
+    heapify(0);
+    return min_vertex;
+  }
 }  // namespace itis
