@@ -34,11 +34,15 @@ namespace itis {
   }
   void MinBinaryHeap::create_heap(std::vector<Vertex>& vertexes) {
     vertexes_ = vertexes;
+    for (int i = 0; i < vertexes.size(); i++){
+      position_of_vertexes.push_back(i);
+    }
     for (int i = (vertexes.size() / 2) - 1; i >= 0; i--){
       heapify(i);
     }
   }
   void MinBinaryHeap::swap(int i, int j) {
+    std::swap(position_of_vertexes[vertexes_[i].number], position_of_vertexes[vertexes_[j].number]);
     std::swap(vertexes_[i], vertexes_[j]);
   }
   Vertex& MinBinaryHeap::get_min_vertex() {
@@ -48,13 +52,17 @@ namespace itis {
     heapify(0);
     return min_vertex;
   }
-  void MinBinaryHeap::change_value(int index, int new_value) {
+  void MinBinaryHeap::change_value(int vertex_number, int new_value) {
+    int index = get_position_in_heap(vertex_number);
     vertexes_[index].value = new_value;
     while (vertexes_[index].value < vertexes_[get_parent(index)].value
            && index != 0){
       swap(index, get_parent(index));
       index = get_parent(index);
     }
+  }
+  int MinBinaryHeap::get_position_in_heap(int vertex_number) {
+    return position_of_vertexes[vertex_number];
   }
 
 }  // namespace itis
