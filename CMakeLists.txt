@@ -32,16 +32,16 @@ target_compile_definitions(project_paths INTERFACE
 
 # === Библиотека со структурой данных (target) ===
 # Это самое главное, что вы должны реализовать в рамках семестрового проекта.
-
-add_library(${PROJECT_NAME} STATIC
+add_library(min_binary_heap STATIC
         src/min_binary_heap.cpp
-        include/min_binary_heap.hpp
+        include/min_binary_heap.hpp)
+add_library(${PROJECT_NAME} STATIC
         src/dijkstra_algorithm.cpp
         include/dijkstra_algorithm.hpp)
 
 # включить предупреждения компилятора для библиотеки (линковка)
 target_link_libraries(${PROJECT_NAME} PRIVATE project_warnings)
-
+target_link_libraries(${PROJECT_NAME} PRIVATE min_binary_heap)
 # обозначить директорию с заголовочными файлами для библиотеки
 target_include_directories(${PROJECT_NAME} PUBLIC include)
 
