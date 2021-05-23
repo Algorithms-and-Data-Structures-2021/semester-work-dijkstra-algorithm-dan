@@ -50,8 +50,6 @@ std::vector<int> DijkstraAlgorithm::get_shortest_paths_values() {
   return shortest_paths;
 }
 std::vector<std::string> DijkstraAlgorithm::get_shortest_paths() {
-  //  auto lambda = [](Vertex left, Vertex right){return left.number < right.number;};
-  //  auto ordered_vertexes = std::set<Vertex, decltype(lambda)>(lambda);
   std::sort(vertexes.begin(), vertexes.end(), [](Vertex left, Vertex right) { return left.number < right.number; });
   std::vector<std::string> ans;
   for (auto vertex : vertexes) {

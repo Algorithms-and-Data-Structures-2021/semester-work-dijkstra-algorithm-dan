@@ -1,6 +1,9 @@
 #include "dijkstra_algorithm.hpp"
 using namespace std;
 using namespace itis;
+
+// Здесь приведен пример работы алгоритма Дейкстры для графа, задающегося матрицей смежности, представленной ниже
+
 int main() {
   vector<vector<int>> adjacency_matrix = {{0, 1, 0, 0, 0, 0, 0, 0},
                                           {0, 0, 5, 0, 0, 5, 7, 0},

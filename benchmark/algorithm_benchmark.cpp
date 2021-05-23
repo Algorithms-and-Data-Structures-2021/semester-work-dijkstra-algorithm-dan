@@ -60,10 +60,11 @@ int main(int argc, char **argv) {
       ifstream input_file(input_path);
 
       if (input_file.is_open()) {
+        // создаем нашу матрицу смежности
         vector<vector<int>> adjacency_matrix;
         adjacency_matrix.reserve(vertex_count);
         string adjacency_list_line;
-
+        // считываем матрицу смежности из файла
         while (getline(input_file, adjacency_list_line)) {
           vector<int> line;
           line.reserve(vertex_count);
