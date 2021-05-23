@@ -1,0 +1,4 @@
+absolute path to the dataset directory=/home/miguelius/Документы/C++/CLionProjects/semester-work-dijkstra-algorithm-dan/dataset/data/dijkstra-algorithm
+absolute path to the directory, where you want to store results of benchmarks=/home/miguelius/Документы/C++/CLionProjects/semester-work-dijkstra-algorithm-dan/benchmark/results
+file names=100.csv,200.csv,400.csv,600.csv,800.csv,1000.csv,1200.csv,1400.csv,1600.csv,1800.csv
+count of one data tests=10
